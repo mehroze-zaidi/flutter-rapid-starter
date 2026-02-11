@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_new_project_template_with_riverpod/core/constants/app_colors.dart';
+import 'package:flutter_rapid_starter/core/constants/app_colors.dart';
 
 class AppTheme {
   AppTheme._();

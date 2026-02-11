@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_new_project_template_with_riverpod/core/constants/app_colors.dart';
+import 'package:flutter_rapid_starter/core/constants/app_colors.dart';
 
 
 class RoundedContainerWidget extends StatelessWidget {
@@ -20,7 +20,7 @@ class RoundedContainerWidget extends StatelessWidget {
   final BorderRadiusGeometry? borderRadiusGeometry;
   final double? borderSideAlignment;
   const RoundedContainerWidget(
-      {Key? key,
+      {super.key,
       this.child,
       this.width,
       this.height,
@@ -34,8 +34,7 @@ class RoundedContainerWidget extends StatelessWidget {
       this.showBorder = true,
       this.shadowOffset,
       this.shadowColor,
-      this.borderRadiusGeometry,this.showShadow=true,this.borderSideAlignment})
-      : super(key: key);
+      this.borderRadiusGeometry,this.showShadow=true,this.borderSideAlignment});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +57,7 @@ class RoundedContainerWidget extends StatelessWidget {
           ]:null,
           border: showBorder!
               ? Border.all(
-            strokeAlign:this.borderSideAlignment ?? BorderSide.strokeAlignInside,
+            strokeAlign:borderSideAlignment ?? BorderSide.strokeAlignInside,
                   color:  borderColor??  AppColors.whiteTxtColor,
                   width:   borderWidth )
               : null,
