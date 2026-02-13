@@ -45,11 +45,11 @@ class RoundedContainerWidget extends StatelessWidget {
 
 
       decoration: BoxDecoration(
-          color: color ??  AppColors.whiteTxtColor,
+          color: color ??  AppColors.white,
           gradient:gradient ,
           boxShadow: showShadow ? [
             BoxShadow(
-              color: shadowColor ?? AppColors.blackTxtColor,
+              color: shadowColor ?? AppColors.baseBlack,
               blurRadius: blurRadius,
               spreadRadius: spreadRadius,
               offset: shadowOffset ?? const Offset(0, 1),
@@ -58,7 +58,7 @@ class RoundedContainerWidget extends StatelessWidget {
           border: showBorder!
               ? Border.all(
             strokeAlign:borderSideAlignment ?? BorderSide.strokeAlignInside,
-                  color:  borderColor??  AppColors.whiteTxtColor,
+                  color:  borderColor??  AppColors.white,
                   width:   borderWidth )
               : null,
           borderRadius: borderRadiusGeometry ?? BorderRadius.all(Radius.circular(borderRadius))),

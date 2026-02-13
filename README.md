@@ -1,6 +1,6 @@
 # flutter_rapid_starter
 
-A Flutter project template to help you start building apps faster. Includes routing, networking, secure storage, localization, responsive layout, theming, and helper scripts — all pre-configured.
+A Flutter project template to help you start building apps faster. Includes routing, networking, secure storage, localization, responsive layout, theming, dark mode color system, and helper scripts — all pre-configured.
 
 ---
 
@@ -27,16 +27,22 @@ A Flutter project template to help you start building apps faster. Includes rout
 lib/
 ├── main.dart
 ├── core/
-│   ├── common_widgets/       # Reusable widgets (RoundedContainer, ScreenBody)
+│   ├── common_widgets/       # Reusable widgets (RoundedContainer, ErrorState)
 │   ├── constants/            # Colors, theme, strings, app constants
-│   └── extensions/           # Dart extensions (spacing helpers)
+│   ├── extensions/           # Dart extensions (spacing helpers)
+│   ├── services/             # ConnectivityService, SecureStorageService
+│   └── utils/                # SnackbarHelper
 ├── data/
+│   ├── api_response.dart     # ApiResponse<T> sealed class (Success / Failure)
+│   ├── network/              # ApiClient, interceptors (auth, error, logging)
 │   └── repository_imp/       # Local and remote repository implementations
 └── presentation/
     ├── app/                  # App entry widget and initializer
+    ├── router/               # GoRouter config (AppRouter, AppRoutes)
     └── screens/
-        ├── splash/           # Splash screen
+        ├── splash/           # Splash screen — checks onboarding flag
         ├── onboarding/       # 3-slide onboarding flow with dot indicators
+        ├── no_connection/    # No-internet screen with retry
         └── home/             # Home screen
 ```
 
@@ -100,15 +106,64 @@ The icon config in `pubspec.yaml` uses an adaptive icon with a white background.
 
 ### 5. Set up translations
 
-Add JSON translation files to `assets/translations/`:
+Translation files are at `assets/translations/`. Five languages are pre-configured: `en`, `ar`, `fr`, `es`, `it`. Add or remove files as needed:
 
 ```
 assets/translations/
 ├── en.json
-└── ar.json
+├── ar.json
+├── fr.json
+├── es.json
+└── it.json
 ```
 
-`easy_localization` is already configured in `pubspec.yaml` assets. Initialize it in `main.dart` following the [easy_localization docs](https://pub.dev/packages/easy_localization).
+`easy_localization` is already initialized in `main.dart` and wrapped in the root widget. Add your keys to `AppStrings` and the JSON files, then use `.tr()` in your widgets.
+
+---
+
+## Colors & Dark Mode
+
+Colors are split into two layers:
+
+**`AppColors`** — pure `const` static tokens, grouped by purpose:
+
+```dart
+// Brand
+AppColors.primary          // main brand color
+AppColors.primary50        // tinted brand surface
+
+// Semantic states
+AppColors.error / error50
+AppColors.success / success50
+AppColors.warning
+AppColors.info / info50
+
+// Surfaces
+AppColors.surfaceWhite
+AppColors.darkBackground
+AppColors.darkCardBackground
+
+// Typography
+AppColors.headingText / labelText / textParagraph / hintColor
+
+// Neutral scale
+AppColors.natural100 / 300 / 500 / 700 / 950
+
+// UI elements
+AppColors.stroke / buttonStroke / inputSurface
+```
+
+**`AppColorScheme`** — context-aware getters that automatically resolve to light or dark values. Access via the `BuildContext` extension:
+
+```dart
+// In any widget:
+Container(color: context.colors.backgroundCard)
+Text('Hello', style: TextStyle(color: context.colors.headingText))
+```
+
+Available getters: `backgroundMain`, `backgroundMainWhite`, `backgroundCard`, `backgroundCardWhite`, `opposite`, `theme`, `headingText`, `bodyText`, `grayText`, `buttonStroke`, `stroke`, `primary50`, `natural100`.
+
+Dark mode is driven by `MaterialApp`'s `theme` / `darkTheme` — no manual calls needed. Toggle it by changing the system appearance or passing `themeMode` to `MaterialApp.router`.
 
 ---
 
@@ -176,8 +231,8 @@ Update the string keys in `AppStrings` and your translation JSON files to change
 
 | Layer | Path | Responsibility |
 |---|---|---|
-| Core | `lib/core/` | Shared constants, widgets, extensions |
-| Data | `lib/data/` | Repository pattern for local and remote data |
+| Core | `lib/core/` | Shared constants, widgets, extensions, services |
+| Data | `lib/data/` | Repository pattern, networking, API response model |
 | Presentation | `lib/presentation/` | Screens, app widget, navigation |
 
 ---

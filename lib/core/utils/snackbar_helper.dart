@@ -61,8 +61,8 @@ class SnackbarHelper {
   }
 
   static Color _colorFor(SnackbarType type) => switch (type) {
-    SnackbarType.success => AppColors.successColor,
-    SnackbarType.error => AppColors.errorColor,
+    SnackbarType.success => AppColors.success,
+    SnackbarType.error => AppColors.error,
     SnackbarType.warning => const Color(0xFFFF9800),
     SnackbarType.info => const Color(0xFF2196F3),
   };

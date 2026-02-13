@@ -8,51 +8,51 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    colorScheme: ColorScheme.light(primary: AppColors.primaryColor),
+    colorScheme: ColorScheme.light(primary: AppColors.primary),
 
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.primaryColor,
-      titleTextStyle: const TextStyle(color: AppColors.blackTxtColor),
+      backgroundColor: AppColors.primary,
+      titleTextStyle: const TextStyle(color: AppColors.baseBlack),
     ),
 
     textTheme: TextTheme(
       bodyLarge: TextStyle(
-        color: AppColors.blackTxtColor,
+        color: AppColors.baseBlack,
         fontFamily: fontFamily,
       ),
       bodyMedium: TextStyle(
-        color: AppColors.blackTxtColor,
+        color: AppColors.baseBlack,
         fontFamily: fontFamily,
       ),
       bodySmall: TextStyle(
-        color: AppColors.blackTxtColor,
+        color: AppColors.baseBlack,
         fontFamily: fontFamily,
       ),
       labelLarge:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       labelMedium:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       labelSmall:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       displayLarge:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       displayMedium:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       displaySmall:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       headlineLarge:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       headlineMedium:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       headlineSmall:
-          TextStyle(color: AppColors.blackTxtColor, fontFamily: fontFamily),
+          TextStyle(color: AppColors.baseBlack, fontFamily: fontFamily),
       titleLarge:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       titleMedium:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
       titleSmall:
-          TextStyle(fontFamily: fontFamily, color: AppColors.blackTxtColor),
+          TextStyle(fontFamily: fontFamily, color: AppColors.baseBlack),
     ),
     // Add more customizations as needed
   );
@@ -60,49 +60,49 @@ class AppTheme {
   static final ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    primaryColor: Colors.black,
-    scaffoldBackgroundColor: Colors.grey[850],
+    primaryColor: AppColors.darkBackground,
+    scaffoldBackgroundColor: AppColors.darkBackground,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.black,
-      titleTextStyle: TextStyle(color: AppColors.whiteTxtColor),
+      backgroundColor: AppColors.darkBackground,
+      titleTextStyle: TextStyle(color: AppColors.white),
     ),
     textTheme: TextTheme(
       bodyLarge: TextStyle(
-        color: AppColors.whiteTxtColor,
+        color: AppColors.white,
         fontFamily: fontFamily,
       ),
       bodyMedium: TextStyle(
-        color: AppColors.whiteTxtColor,
+        color: AppColors.white,
         fontFamily: fontFamily,
       ),
       bodySmall: TextStyle(
-        color: AppColors.whiteTxtColor,
+        color: AppColors.white,
         fontFamily: fontFamily,
       ),
       labelLarge:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       labelMedium:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       labelSmall:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       displayLarge:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       displayMedium:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       displaySmall:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       headlineLarge:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       headlineMedium:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       headlineSmall:
-      TextStyle(color: AppColors.whiteTxtColor, fontFamily: fontFamily),
+      TextStyle(color: AppColors.white, fontFamily: fontFamily),
       titleLarge:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       titleMedium:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
       titleSmall:
-      TextStyle(fontFamily: fontFamily, color: AppColors.whiteTxtColor),
+      TextStyle(fontFamily: fontFamily, color: AppColors.white),
     ),
     // Add more customizations as needed
   );
